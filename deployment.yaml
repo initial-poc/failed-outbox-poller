@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: outbox-poller-deployment
+  name: failed-outbox-poller-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: outbox-poller-pod
+      app: failed-outbox-poller-pod
   template:
     metadata:
       labels:
-        app: outbox-poller-pod
+        app: failed-outbox-poller-pod
     spec:
       containers:
-        - image: gcr.io/pnr-order-poc/outbox-poller:latest
-          name: outbox-poller
+        - image: gcr.io/pnr-order-poc/failed-outbox-poller:latest
+          name: failed-outbox-poller
             
