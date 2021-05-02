@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.infogain.gcp.poc</groupId>
-    <artifactId>outbox-poller</artifactId>
+    <artifactId>failed-outbox-poller</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
 
