@@ -15,18 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-@RestController
 public class OutboxFailedRecordPollerExector {
     private final OutboxRecordProcessorService pollerOutboxRecordProcessorService;
 
-    @GetMapping("/processOutboxFailedRecords")
+    @Scheduled(cron = "*/5 * * * * *")
     public void processFailedRecords() {
         log.info("Failed Record poller started at {}", LocalTime.now());
         pollerOutboxRecordProcessorService.processFailedRecords();
         log.info("Failed Record poller completed at {}", LocalTime.now());
     }
 
-    @GetMapping("/processOutboxStuckRecords")
+    @Scheduled(cron = "*/5 * * * * *")
     public void processStuckRecords() {
         log.info("Stuck Record poller started at {}", LocalTime.now());
         pollerOutboxRecordProcessorService.processStuckRecords();
