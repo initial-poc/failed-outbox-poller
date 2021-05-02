@@ -1,18 +1,11 @@
 package com.infogain.gcp.poc.poller.entity;
 
+import com.google.cloud.Timestamp;
+import com.infogain.gcp.poc.poller.domainmodel.PNRModel;
+import lombok.*;
 import org.springframework.cloud.gcp.data.spanner.core.mapping.Column;
 import org.springframework.cloud.gcp.data.spanner.core.mapping.PrimaryKey;
 import org.springframework.cloud.gcp.data.spanner.core.mapping.Table;
-
-import com.google.cloud.Timestamp;
-import com.infogain.gcp.poc.poller.domainmodel.PNRModel;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.SneakyThrows;
-import lombok.ToString;
 
 @Data
 @Builder
@@ -34,6 +27,8 @@ public class OutboxEntity {
     private int retry_count;
 
     private Timestamp updated;
+
+    private long processing_time_millis;
 
 
     @SneakyThrows
