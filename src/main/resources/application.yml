@@ -57,7 +57,6 @@ spring:
       hibernate:
         jdbc:
           batch_size: 20
-  profiles.active: dev
   cloud:
     gcp:
       project-id: pnr-order-poc

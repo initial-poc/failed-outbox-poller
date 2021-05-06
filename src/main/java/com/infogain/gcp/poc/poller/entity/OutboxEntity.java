@@ -37,7 +37,7 @@ public class OutboxEntity {
         pnrModel.setMessageseq(this.getVersion());
         pnrModel.setPayload(this.getData());
         pnrModel.setPnrid(this.getLocator());
-        pnrModel.setTimestamp(this.getCreated().toString());
+        pnrModel.setTimestamp(this.getCreated()==null?Timestamp.now().toString():this.getCreated().toString());
         pnrModel.setRetry_count(this.retry_count);
         pnrModel.setUpdated(this.updated);
         return pnrModel;
